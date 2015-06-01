@@ -22,7 +22,7 @@ INSTALL_TARGET=	install-strip
 USES=		libtool pathfix perl5 pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-doxygen-doc --enable-applabel --enable-plugins --enable-p0fprinter
+CONFIGURE_ARGS=	--disable-doxygen-doc --enable-applabel --enable-plugins --enable-p0fprinter --enable-fpexporter
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
