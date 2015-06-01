@@ -1,0 +1,8 @@
+yaf_file_mediator reads YAF IPFIX files using libfixbuf and writes flow data in 
+ASCII text to stdout or to the given file.  This program is intended to read
+IPFIX files generated from YAF version 2.  However it will read IPFIX
+files from earlier versions of YAF, but will not decode any data that is now
+contained in the subTemplateMultiList (payload, entropy, p0f, mac addresses, 
+etc.)  This program is able to read all DPI elements exported from YAF's DPI
+plugin and DHCP fingerprinting plugin, as well as flow statistics (YAF 2.3 
+--flow-stats).

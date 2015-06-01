@@ -1,0 +1,6 @@
+crc32.lo crc32.o: crc32.c ../../include/p0f/public.h \
+  ../../include/p0f/config-p0f.h
+
+../../include/p0f/public.h:
+
+../../include/p0f/config-p0f.h:

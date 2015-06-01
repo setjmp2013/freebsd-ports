@@ -1,0 +1,5 @@
+libp0f is the autotools version of p0f with support for 3rd-party linkage. 
+libp0f splits the core p0f functionality from the p0f application.  The p0f
+library is installed as libp0f.so into /usr/local/lib (or wherever libp0f is
+configured to place it) and the p0f application is installed into 
+/usr/local/bin (configure blah blah).
