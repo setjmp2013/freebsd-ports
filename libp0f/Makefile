@@ -3,7 +3,7 @@
 
 PORTNAME=	libp0f
 PORTVERSION=	2.0.8
-CATEGORIES=	net
+CATEGORIES=	setjmp net
 MASTER_SITES=	http://tools.netsa.cert.org/confluence/download/attachments/16547842/
 DISTNAME=	p0flib
 

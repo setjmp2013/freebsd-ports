@@ -3,7 +3,7 @@
 
 PORTNAME=	yaf
 PORTVERSION=	2.7.1
-CATEGORIES=	net-mgmt
+CATEGORIES=	setjmp net-mgmt
 MASTER_SITES=	http://tools.netsa.cert.org/releases/
 
 MAINTAINER=	setjmp@hotmail.com

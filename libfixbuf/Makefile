@@ -3,7 +3,7 @@
 
 PORTNAME=	libfixbuf
 PORTVERSION=	1.6.2
-CATEGORIES=	net
+CATEGORIES=	setjmp net
 MASTER_SITES=	http://tools.netsa.cert.org/releases/ \
 		http://redundancy.redundancy.org/mirror/
 

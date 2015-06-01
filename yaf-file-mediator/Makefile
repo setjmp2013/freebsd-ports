@@ -3,7 +3,7 @@
 
 PORTNAME=	yaf_file_mediator
 PORTVERSION=	1.1.0
-CATEGORIES=	net-mgmt
+CATEGORIES=	setjmp net-mgmt
 MASTER_SITES=	http://tools.netsa.cert.org/confluence/download/attachments/15958024/
 
 MAINTAINER=	setjmp@hotmail.com
