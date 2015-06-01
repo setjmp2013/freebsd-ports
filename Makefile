@@ -8,5 +8,6 @@
     SUBDIR += libfixbuf
     SUBDIR += yaf
     SUBDIR += yaf-file-mediator
+    SUBDIR += py-elasticsearch-py
 
 .include <bsd.port.subdir.mk>
