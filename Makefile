@@ -12,5 +12,7 @@
     SUBDIR += silktools
     SUBDIR += IPAsuite
     SUBDIR += py-netsa
+    SUBDIR += kibana4
+    SUBDIR += kibana4-devel
 
 .include <bsd.port.subdir.mk>
