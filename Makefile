@@ -10,5 +10,6 @@
     SUBDIR += yaf-file-mediator
     SUBDIR += py-elasticsearch-py
     SUBDIR += silktools
+    SUBDIR += IPAsuite
 
 .include <bsd.port.subdir.mk>
