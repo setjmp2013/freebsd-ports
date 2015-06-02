@@ -11,11 +11,13 @@ DISTNAME=	silk-${PORTVERSION}
 MAINTAINER=	setjmp@hotmail.com
 COMMENT=	Tools for large-scale network capture analysis
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2 \
 		libfixbuf.so:${PORTSDIR}/setjmp/libfixbuf
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-lzo=${LOCALBASE} --enable-packing-tools --with-python
+CONFIGURE_ARGS=	--with-lzo=${LOCALBASE} --enable-packing-tools --with-python --enable-ipv6 --enable-static
 USE_LDCONFIG=	yes
 USES=		gmake perl5 pkgconfig python libtool
 USE_PERL5=	build
