@@ -11,5 +11,6 @@
     SUBDIR += py-elasticsearch-py
     SUBDIR += silktools
     SUBDIR += IPAsuite
+    SUBDIR += py-netsa
 
 .include <bsd.port.subdir.mk>

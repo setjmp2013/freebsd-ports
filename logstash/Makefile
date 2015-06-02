@@ -4,7 +4,7 @@
 PORTNAME=	logstash
 PORTVERSION=	1.5.0
 PORTREVISION=	1
-CATEGORIES=	sysutils java
+CATEGORIES=	setjmp sysutils java
 MASTER_SITES=	https://download.elastic.co/logstash/logstash/:0 \
 		https://github.com/emcrisostomo/jnr-ffi/releases/download/2.0.0/:1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:0 jnr-ffi-2.0.0.jar:1
