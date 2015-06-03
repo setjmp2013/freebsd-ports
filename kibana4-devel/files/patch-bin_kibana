@@ -1,4 +1,4 @@
---- bin/kibana.orig	2015-06-02 22:12:00 UTC
+--- bin/kibana.orig	2015-06-01 21:39:04 UTC
 +++ bin/kibana
 @@ -14,7 +14,7 @@ while [ -h "$SCRIPT" ] ; do
  done
