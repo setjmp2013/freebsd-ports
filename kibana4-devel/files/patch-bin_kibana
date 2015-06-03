@@ -1,11 +1,15 @@
---- bin/kibana.orig	2015-06-01 21:39:04 UTC
+--- bin/kibana.orig	2015-06-03 00:41:04 UTC
 +++ bin/kibana
-@@ -14,7 +14,7 @@ while [ -h "$SCRIPT" ] ; do
+@@ -13,9 +13,9 @@ while [ -h "$SCRIPT" ] ; do
+   fi
  done
  
- DIR=$(dirname "${SCRIPT}")/..
+-DIR=$(dirname "${SCRIPT}")/..
 -NODE=${DIR}/node/bin/node
++DIR=/usr/local/share/kibana-4.1.0
 +NODE=`which node`
  SERVER=${DIR}/src/bin/kibana.js
  
- CONFIG_PATH="${DIR}/config/kibana.yml" NODE_ENV="production" exec "${NODE}" ${SERVER} ${@}
+-CONFIG_PATH="${DIR}/config/kibana.yml" NODE_ENV="production" exec "${NODE}" ${SERVER} ${@}
++CONFIG_PATH="/usr/local/etc/kibana.yml" NODE_ENV="production" exec "${NODE}" ${SERVER} ${@}
+ 
