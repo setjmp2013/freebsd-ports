@@ -19,7 +19,7 @@ INSTALL_TARGET=	install-strip
 USES=		tar:tgz libtool pathfix pkgconfig
 
 post-stage:
-	${MV} ${STAGEDIR}/etc/p0f ${STAGEDIR}/usr/local/etc/libp0f
-	${RMDIR} ${STAGEDIR}/etc
+	${MV} ${STAGEDIR}/etc/p0f ${STAGEDIR}${LOCALBASE}/etc/libp0f
+	${RM} -rf ${STAGEDIR}/etc
 
 .include <bsd.port.mk>

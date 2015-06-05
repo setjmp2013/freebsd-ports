@@ -13,7 +13,7 @@ COMMENT=	Library for using the IP Flow Information Export protocol
 LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --with-openssl=/usr --with-spread=${LOCALBASE}
+CONFIGURE_ARGS= --with-openssl=/usr --with-spread=${LOCALBASE} --with-sctp=/usr
 INSTALL_TARGET=	install-strip
 USES=		libtool pathfix pkgconfig
 USE_GNOME=	glib20
