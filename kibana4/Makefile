@@ -15,6 +15,7 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	${LOCALBASE}/bin/node:${PORTSDIR}/www/node
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 CONFLICTS_INSTALL=	kibana-4.1.0
 
 USERS=	elasticsearch
