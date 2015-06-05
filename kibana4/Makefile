@@ -20,6 +20,7 @@ CONFLICTS_INSTALL=	kibana-4.1.0
 USERS=	elasticsearch
 GROUPS= elasticsearch
 
+USE_RC_SUBR=	${PORTNAME}
 do-install:
 	cd ${WRKSRC}/bin && ${CP} kibana ${STAGEDIR}${LOCALBASE}/bin
 	cd ${WRKSRC}/config && ${CP} kibana.yml ${STAGEDIR}${LOCALBASE}/etc/kibana.yml.sample

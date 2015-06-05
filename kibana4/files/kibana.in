@@ -2,16 +2,16 @@
 #
 # $FreeBSD$
 # 
-# PROVIDE: kibana4
+# PROVIDE: kibana
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
 #
-# kibana4_enable="YES"
+# kibana_enable="YES"
 #
-# kibana4_user="username" 
-# kibana4_group="groupname"
-# kibana4_log="path_to_including_logfile"
-# kibana4_logsilent="YESorNO"
+# kibana_user="username" 
+# kibana_group="groupname"
+# kibana_log="path_to_including_logfile"
+# kibana_logsilent="YESorNO"
 #
 # Kibana logs every (many) web request and will create a huge log fast
 # so the default is to keep it silent, though if enabled the output
@@ -20,39 +20,40 @@
 
 . /etc/rc.subr
 
-name=kibana4
-rcvar=kibana4_enable
+name=kibana
+rcvar=kibana_enable
 desc="Kibana web based interface to search/analyze Elasticsearch"
 
 load_rc_config $name
 
-: ${kibana4_enable:=NO}
-: ${kibana4_config:="%%PREFIX%%/etc/kibana.yml"}
-: ${kibana4_log:=/var/log/kibana/kibana.log}
-: ${kibana4_logsilent:=YES}
-: ${kibana4_user:=elasticsearch}
-: ${kibana4_group:=elasticsearch}
+: ${kibana_enable:=NO}
+: ${kibana_config:="%%PREFIX%%/etc/kibana.yml"}
+: ${kibana_log:=/var/log/kibana/kibana.log}
+: ${kibana_logsilent:=YES}
+: ${kibana_user:=elasticsearch}
+: ${kibana_group:=elasticsearch}
 
-required_files="${kibana4_config}"
-pidfile=/var/run/kibana.pid
+required_files="${kibana_config}"
+pidprefix=/var/run/${name}
+pidfile=${pidprefix}/${name}.pid
 
 stop_cmd="${name}_stop"
-start_precmd=kibana4_precmd
+start_precmd=kibana_precmd
 command=/usr/sbin/daemon
-command_args="-f %%PREFIX%%/bin/kibana -c ${kibana4_config}"
+command_args="-f %%PREFIX%%/bin/kibana -c ${kibana_config}"
 
-kibana4_precmd()
+kibana_precmd()
 {
-	/usr/bin/install -d -o ${kibana4_user} -g ${kibana4_group} -m 750 $pidfile
-	if [ $(checkyesno kibana4_logsilent) -eq 1 ]; then
-		/usr/bin/install -d -o ${kibana4_user} -g ${kibana4_group} -m 750 /var/log/kibana
-		command_args="/usr/local/bin/kibana -c ${kibana4_config} >${kibana4_log}"
+	/usr/bin/install -d -o ${kibana_user} -g ${kibana_group} -m 750 $pidprefix
+	if ! checkyesno kibana_logsilent  ; then
+		/usr/bin/install -d -o ${kibana_user} -g ${kibana_group} -m 750 /var/log/kibana
+		command_args="%%PREFIX%%/bin/kibana -c ${kibana_config} >${kibana_log}"
 	fi
 }
 
-kibana4_stop()
+kibana_stop()
 {
-	rc_pid=$(kibana4_check_pidfile $pidfile)
+	rc_pid=$(kibana_check_pidfile $pidfile)
 
 	if [ -z "$rc_pid" ]; then
 		[ -n "$rc_fast" ] && return 0
@@ -64,11 +65,11 @@ kibana4_stop()
 	kill ${rc_pid} 2>/dev/null
 }
 
-kibana4_check_pidfile()
+kibana_check_pidfile()
 {
         _pidfile=$1
         if [ -z "$_pidfile" ]; then
-                err 3 'USAGE: kibana4_check_pidfile pidfile'
+                err 3 'USAGE: kibana_check_pidfile pidfile'
         fi
         if [ ! -f $_pidfile ]; then
                 debug "pid file ($_pidfile): not readable."
