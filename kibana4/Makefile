@@ -8,12 +8,13 @@ CATEGORIES=	setjmp textproc
 MASTER_SITES=	http://download.elastic.co/kibana/kibana/
 
 MAINTAINER=	setjmp@hotmail.com
-COMMENT=	V4 of Browser based analytics and search interface to ElasticSearch
+COMMENT=	Kibana is a browser based dashboard for Elasticsearch
 
 LICENSE=	APACHE20
 
-NO_BUILD=	yes
 RUN_DEPENDS=	${LOCALBASE}/bin/node:${PORTSDIR}/www/node
+
+NO_BUILD=	yes
 CONFLICTS_INSTALL=	kibana-4.1.0
 
 do-install:
