@@ -8,11 +8,13 @@ CATEGORIES=	setjmp textproc
 MASTER_SITES=	http://download.elastic.co/kibana/kibana/
 
 MAINTAINER=	setjmp@hotmail.com
-COMMENT=	Dashboard interface to elasticsearch indexes version 4
+COMMENT=	V4 of Browser based analytics and search interface to ElasticSearch
 
 LICENSE=	APACHE20
 
 NO_BUILD=	yes
+RUN_DEPENDS=	${LOCALBASE}/bin/node:${PORTSDIR}/www/node
+CONFLICTS_INSTALL=	kibana-4.1.0
 
 do-install:
 	cd ${WRKSRC}/bin && ${CP} kibana ${STAGEDIR}${LOCALBASE}/bin

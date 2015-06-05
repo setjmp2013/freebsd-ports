@@ -1,1 +1,14 @@
-SHort quick descr for now
+Seamless Integration with Elasticsearch
+
+Visualize Data from Many Sources
+Easily visualize data pushed into Elasticsearch from Logstash, es-hadoop or 3rd
+party technologies like Apache Flume, Fluentd, and many others.
+
+See the Value in Your Data
+
+    Flexible analytics and visualization platform
+    Real-time summary and charting of streaming data
+    Intuitive interface for a variety of users
+    Instant sharing and embedding of dashboards
+
+WWW: http://elastic.co/kibana/
