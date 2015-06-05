@@ -17,6 +17,9 @@ RUN_DEPENDS=	${LOCALBASE}/bin/node:${PORTSDIR}/www/node
 NO_BUILD=	yes
 CONFLICTS_INSTALL=	kibana-4.1.0
 
+USERS=	elasticsearch
+GROUPS= elasticsearch
+
 do-install:
 	cd ${WRKSRC}/bin && ${CP} kibana ${STAGEDIR}${LOCALBASE}/bin
 	cd ${WRKSRC}/config && ${CP} kibana.yml ${STAGEDIR}${LOCALBASE}/etc/kibana.yml.sample
