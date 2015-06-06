@@ -17,9 +17,9 @@ LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2 \
 		libfixbuf.so:${PORTSDIR}/setjmp/libfixbuf
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-lzo=${LOCALBASE} --enable-packing-tools --with-python --enable-ipv6 --enable-static
+CONFIGURE_ARGS=	--with-lzo=${LOCALBASE} --enable-packing-tools --enable-ipv6 --enable-static --enable-extra-checks
 USE_LDCONFIG=	yes
-USES=		gmake perl5 pkgconfig python libtool
+USES=		gmake perl5 pkgconfig libtool
 USE_PERL5=	build
 INSTALL_TARGET=	install-strip
 

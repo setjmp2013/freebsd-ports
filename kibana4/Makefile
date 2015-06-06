@@ -19,7 +19,7 @@ NO_ARCH=	yes
 CONFLICTS_INSTALL=	kibana-4.1.0
 
 USERS=	elasticsearch
-GROUPS= elasticsearch
+GROUPS=	elasticsearch
 
 USE_RC_SUBR=	${PORTNAME}
 do-install:

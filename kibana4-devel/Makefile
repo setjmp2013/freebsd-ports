@@ -4,16 +4,24 @@
 PORTNAME=	kibana
 PORTVERSION=	4.1.0
 DISTVERSIONSUFFIX=	-snapshot-darwin-x64
-CATEGORIES=	setjmp
+CATEGORIES=	setjmp textproc
 MASTER_SITES=	http://download.elastic.co/kibana/kibana/
 
 MAINTAINER=	setjmp@hotmail.com
-COMMENT=	Kibana
+COMMENT=	Kibana is a browser based dashboard for Elasticsearch
 
 LICENSE=	APACHE20
 
-NO_BUILD=	yes
+RUN_DEPENDS=	${LOCALBASE}/bin/node:${PORTSDIR}/www/node
 
+NO_BUILD=	yes
+NO_ARCH=	yes
+CONFLICTS_INSTALL=	kibana-4.0.2
+
+USERS=	elasticsearch
+GROUPS=	elasticsearch
+
+USE_RC_SUBR=	${PORTNAME}
 do-install:
 	#cd ${WORKSRC}/bin && ${COPYTREE_SHARE} . ${STAGEDIR}/bin
 	cd ${WRKSRC}/bin && ${CP} kibana ${STAGEDIR}${LOCALBASE}/bin

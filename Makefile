@@ -14,5 +14,6 @@
     SUBDIR += py-netsa
     SUBDIR += kibana4
     SUBDIR += kibana4-devel
+    SUBDIR += analysis-pipeline
 
 .include <bsd.port.subdir.mk>

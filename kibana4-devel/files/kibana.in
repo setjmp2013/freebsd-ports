@@ -1,0 +1,89 @@
+#!/bin/sh
+#
+# $FreeBSD$
+# 
+# PROVIDE: kibana
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# kibana_enable="YES"
+#
+# kibana_user="username" 
+# kibana_group="groupname"
+# kibana_log="path_to_including_logfile"
+# kibana_logsilent="YESorNO"
+#
+# Kibana logs every (many) web request and will create a huge log fast
+# so the default is to keep it silent, though if enabled the output
+# is redirected. kibana 4.1.0 will replace this somewhat as it has
+# directives to log in it whereas 4.0.2 does not.
+
+. /etc/rc.subr
+
+name=kibana
+rcvar=kibana_enable
+desc="Kibana web based interface to search/analyze Elasticsearch"
+
+load_rc_config $name
+
+: ${kibana_enable:=NO}
+: ${kibana_config:="%%PREFIX%%/etc/kibana.yml"}
+: ${kibana_log:=/var/log/kibana/kibana.log}
+: ${kibana_logsilent:=YES}
+: ${kibana_user:=elasticsearch}
+: ${kibana_group:=elasticsearch}
+
+required_files="${kibana_config}"
+pidprefix=/var/run/${name}
+pidfile=${pidprefix}/${name}.pid
+
+stop_cmd="${name}_stop"
+start_precmd=kibana_precmd
+command=/usr/sbin/daemon
+command_args="-f %%PREFIX%%/bin/kibana -c ${kibana_config} -l /dev/null"
+
+kibana_precmd()
+{
+	/usr/bin/install -d -o ${kibana_user} -g ${kibana_group} -m 750 $pidprefix
+	if ! checkyesno kibana_logsilent  ; then
+		/usr/bin/install -d -o ${kibana_user} -g ${kibana_group} -m 750 /var/log/kibana
+		command_args="%%PREFIX%%/bin/kibana -c ${kibana_config} -l ${kibana_log}"
+	fi
+}
+
+kibana_stop()
+{
+	rc_pid=$(kibana_check_pidfile $pidfile)
+
+	if [ -z "$rc_pid" ]; then
+		[ -n "$rc_fast" ] && return 0
+		echo "${name} not running? (check $pidfile)."
+		return 1
+	fi
+
+	echo "Stopping ${name}."
+	kill ${rc_pid} 2>/dev/null
+}
+
+kibana_check_pidfile()
+{
+        _pidfile=$1
+        if [ -z "$_pidfile" ]; then
+                err 3 'USAGE: kibana_check_pidfile pidfile'
+        fi
+        if [ ! -f $_pidfile ]; then
+                debug "pid file ($_pidfile): not readable."
+                return
+        fi
+        read _pid _junk < $_pidfile
+        if [ -z "$_pid" ]; then
+                debug "pid file ($_pidfile): no pid in file."
+                return
+        fi
+        if [ -n "`/bin/ps $_pid | grep -e "^$_pid"`" ]; then
+                echo -n $_pid
+        fi
+}
+
+run_rc_command "$1"
+
