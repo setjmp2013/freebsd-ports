@@ -15,5 +15,6 @@
     SUBDIR += kibana4
     SUBDIR += kibana4-devel
     SUBDIR += analysis-pipeline
+    SUBDIR += jruby9000
 
 .include <bsd.port.subdir.mk>
