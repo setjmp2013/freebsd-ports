@@ -16,9 +16,10 @@ WRKSRC_SUBDIR=	libp0f
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc
 INSTALL_TARGET=	install-strip
-USES=		tar:tgz libtool pathfix pkgconfig
+USES=		libtool pathfix pkgconfig tar:tgz
 
 post-stage:
+	${RM} -f ${STAGEDIR}${LOCALBASE}/bin/p0f
 	${MV} ${STAGEDIR}/etc/p0f ${STAGEDIR}${LOCALBASE}/etc/libp0f
 	${RM} -rf ${STAGEDIR}/etc
 
