@@ -8,7 +8,7 @@ MASTER_SITES=	http://tools.netsa.cert.org/confluence/download/attachments/165478
 DISTNAME=	p0flib
 
 MAINTAINER=	setjmp@hotmail.com
-COMMENT=	Library of p0f for yaf
+COMMENT=	Library of p0f-2.x for yaf as in the CERT NETSA confluence
 
 LICENSE=	LGPL21
 
