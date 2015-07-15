@@ -19,9 +19,18 @@ This is very much still a work in progress, and what's to come include:
 
 - yaf
 - silk
-- logstash
-- kibana4
+- kibana4 - not submitted as there is another capable that was ahead of me to.
+- super_mediator
+- yaf_file_mediator
+- libp0f
 - more to be added
+
+# Submitted
+- libp0f
+- yaf_file_mediator
+
+# Emailed port maintainer
+- libfixbuf
 
 **Eric**
 
