@@ -9,7 +9,7 @@ MASTER_SITES=	http://tools.netsa.cert.org/confluence/download/attachments/159580
 MAINTAINER=	setjmp@hotmail.com
 COMMENT=	YAF file mediator
 
-LICENSE=	GPLV2
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfixbuf.so:${PORTSDIR}/setjmp/libfixbuf
 
