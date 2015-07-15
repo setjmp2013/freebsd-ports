@@ -11,10 +11,6 @@ usual maintainers.
 and add setjmp to VALID_CATEGORIES around line 2609 to fit my local
 path of /usr/ports/setjmp where this repo exists*
 
-*NOTE: the logstash does not do file input sincedb correctly at this time
-as was the case with the older one in ports without effort to. Working on
-it. That is the only problem though, otherwise it functions fine.*
-
 This is very much still a work in progress, and what's to come include:
 
 - yaf
