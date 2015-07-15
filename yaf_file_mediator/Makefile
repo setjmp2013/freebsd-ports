@@ -9,6 +9,11 @@ MASTER_SITES=	http://tools.netsa.cert.org/confluence/download/attachments/159580
 MAINTAINER=	setjmp@hotmail.com
 COMMENT=	YAF file mediator
 
+LIB_DEPENDS=	libfixbuf.so:${PORTSDIR}/setjmp/libfixbuf
+
 GNU_CONFIGURE=	YES
+INSTALL_TARGET= install-strip
+USES=           libtool pathfix pkgconfig
+USE_GNOME=      glib20
 
 .include <bsd.port.mk>

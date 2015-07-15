@@ -6,7 +6,7 @@
     SUBDIR += libp0f
     SUBDIR += libfixbuf
     SUBDIR += yaf
-    SUBDIR += yaf-file-mediator
+    SUBDIR += yaf_file_mediator
     SUBDIR += py-elasticsearch-py
     SUBDIR += silktools
     SUBDIR += IPAsuite
