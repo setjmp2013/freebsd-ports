@@ -4,7 +4,6 @@
     COMMENT = setjmp local ports
 
     SUBDIR += libp0f
-    SUBDIR += logstash
     SUBDIR += libfixbuf
     SUBDIR += yaf
     SUBDIR += yaf-file-mediator
@@ -15,6 +14,6 @@
     SUBDIR += kibana4
     SUBDIR += kibana4-devel
     SUBDIR += analysis-pipeline
-    SUBDIR += jruby9000
+    SUBDIR += super_mediator
 
 .include <bsd.port.subdir.mk>
