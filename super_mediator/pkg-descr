@@ -1,0 +1,9 @@
+super_mediator is an IPFIX mediator for use with the yaf and SiLK tools. What is
+an IPFIX mediator? An IPFIX mediator is an intermediate entity between IPFIX
+Exporters and Collectors that can potentially provide aggregation, filtering,
+and modification of IPFIX records. It may provide conversion to or from IPFIX or
+a conversion of IPFIX transport protocols. super_mediator collects and processes
+yaf output (IPFIX files or via TCP, UDP, or Spread) and exports that data in
+IPFIX, JSON, or CSV text format to one or more IPFIX collectors such as
+rwflowpack, flowcap, or to text files that may be bulk uploaded to a database.
+MySQL support is provided for automatic import. 
