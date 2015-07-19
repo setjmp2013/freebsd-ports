@@ -30,6 +30,9 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 CONFIGURE_ARGS+=	--with-dag=${LOCALBASE}
 .endif
 
+post-stage:
+	${RM} ${STAGEDIR}${LOCALBASE}/etc/p0f.fp
+
 post-install:
 .for f in dhcp_fingerprints.conf yafApplabelRules.conf yafDPIRules.conf
 	${MV} ${STAGEDIR}${PREFIX}/etc/$f ${STAGEDIR}${PREFIX}/etc/$f.sample

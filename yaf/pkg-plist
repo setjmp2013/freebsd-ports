@@ -168,3 +168,11 @@ man/man1/yafMeta2Pcap.1.gz
 man/man1/yafdhcp.1.gz
 man/man1/yafdpi.1.gz
 man/man1/yafscii.1.gz
+lib/yaf/gh0stplugin.a
+lib/yaf/gh0stplugin.so
+lib/yaf/gh0stplugin.so.1
+lib/yaf/gh0stplugin.so.1.0.1
+lib/yaf/netdgmplugin.a
+lib/yaf/netdgmplugin.so
+lib/yaf/netdgmplugin.so.1
+lib/yaf/netdgmplugin.so.1.0.1
