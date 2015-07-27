@@ -15,5 +15,6 @@
     SUBDIR += kibana4-devel
     SUBDIR += analysis-pipeline
     SUBDIR += super_mediator
+    SUBDIR += orcus
 
 .include <bsd.port.subdir.mk>
