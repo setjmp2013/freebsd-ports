@@ -13,9 +13,6 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfixbuf.so:${PORTSDIR}/setjmp/libfixbuf
 
-GNU_CONFIGURE=	YES
-INSTALL_TARGET=	install-strip
-USES=		libtool pathfix pkgconfig
-USE_GNOME=	glib20
-
+USES=	python
+USE_PYTHON=	distutils autoplist
 .include <bsd.port.mk>
