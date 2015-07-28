@@ -24,8 +24,9 @@ OPTIONS_DEFINE=	MYSQL SPREAD4 SILKIPSET
 
 .if ${PORT_OPTIONS:MSPREAD4}
 LIB_DEPENDS+=   libspread.so.3:${PORTSDIR}/net/spread4
+CONFITURE_ARGS+=	--with-spread=/usr/local
 .else
-CONFIGURE_ARGS+=	--with-spread=/nonexistant
+CONFIGURE_ARGS+=	--with-spread=no
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
