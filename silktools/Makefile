@@ -19,7 +19,7 @@ LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2 \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lzo=${LOCALBASE} --enable-packing-tools --enable-ipv6 --enable-static --enable-extra-checks
 USE_LDCONFIG=	yes
-USES=		gmake perl5 pkgconfig libtool
+USES=		gmake libtool perl5 pkgconfig
 USE_PERL5=	build
 INSTALL_TARGET=	install-strip
 
