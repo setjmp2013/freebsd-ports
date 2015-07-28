@@ -1,5 +1,5 @@
 bin/super_mediator
-bin/super_table_creator
+%%MYSQL%%bin/super_table_creator
 etc/super_mediator.conf
 include/super_mediator/mediator.h
 include/super_mediator/mediator_CERT_IE.h
@@ -10,7 +10,7 @@ include/super_mediator/mediator_filter.h
 include/super_mediator/mediator_inf.h
 include/super_mediator/templates.h
 include/super_mediator/mediator_util.h
-man/man1/super_table_creator.1.gz
+%%MYSQL%%man/man1/super_table_creator.1.gz
 man/man1/super_mediator.1.gz
 man/man1/super_mediator.conf.1.gz
 share/licenses/super_mediator-1.1.1/catalog.mk

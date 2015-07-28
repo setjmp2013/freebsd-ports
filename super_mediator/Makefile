@@ -14,17 +14,17 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libfixbuf.so:${PORTSDIR}/setjmp/libfixbuf libsilk.so:${PORTSDIR}/setjmp/silktools
 
 GNU_CONFIGURE=	YES
-CONFIGURE_ARGS+=	--with-skipset=/usr/local
 INSTALL_TARGET=	install-strip
 USES=		libtool pathfix pkgconfig
 USE_GNOME=	glib20
 
 OPTIONS_DEFINE=	MYSQL SPREAD4 SILKIPSET
+OPTIONS_SUB=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSPREAD4}
-LIB_DEPENDS+=   libspread.so.3:${PORTSDIR}/net/spread4
-CONFITURE_ARGS+=	--with-spread=/usr/local
+LIB_DEPENDS+=	libspread.so.3:${PORTSDIR}/net/spread4
+CONFITURE_ARGS+=	--with-spread=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--with-spread=no
 .endif
@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=	--with-mysql=no
 .endif
 
 .if ${PORT_OPTIONS:MSILKIPSET}
-CONFIGURE_ARGS+=	--with-skipset=/usr/local
+CONFIGURE_ARGS+=	--with-skipset=${LOCALBASE}
 LIB_DEPENDS+=	libsilk.so:${PORTSDIR}/setjmp/silktools
 .else
 CONFIGURE_ARGS+=	--without-skipset
