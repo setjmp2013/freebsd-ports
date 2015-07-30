@@ -14,4 +14,9 @@ LICENSE=	GPLv2
 
 USES=	python
 USE_PYTHON=	distutils autoplist
+
+post-extract:
+	${RM} -rf ${WRKSRC}/doc
+	${RM} -rf ${WRKSRC}/docmodules
+
 .include <bsd.port.mk>
