@@ -16,5 +16,6 @@
     SUBDIR += analysis-pipeline
     SUBDIR += super_mediator
     SUBDIR += orcus
+    SUBDIR += py-rayon
 
 .include <bsd.port.subdir.mk>
