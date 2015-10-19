@@ -2,7 +2,7 @@
 # $FreeBSD: head/net/libfixbuf/Makefile 372232 2014-11-06 19:41:06Z antoine $
 
 PORTNAME=	libfixbuf
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	setjmp net
 MASTER_SITES=	http://tools.netsa.cert.org/releases/ \
 		http://redundancy.redundancy.org/mirror/

@@ -2,7 +2,7 @@
 # $FreeBSD: head/security/silktools/Makefile 372234 2014-11-06 19:44:13Z antoine $
 
 PORTNAME=	silktools
-PORTVERSION=	3.10.2
+PORTVERSION=	3.11.0.1
 CATEGORIES=	setjmp security net
 MASTER_SITES=	http://tools.netsa.cert.org/releases/ \
 		http://redundancy.redundancy.org/mirror/
