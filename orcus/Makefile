@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	orcus
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	setjmp net-mgmt
 MASTER_SITES=	http://tools.netsa.cert.org/releases/
 
