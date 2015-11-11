@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+# PROVIDE: rwflowpack
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=rwflowpack
+rcvar=rwflowpack_enable
+
+load_rc_config $name
+
+: ${rwflowpack_enable="NO"}
+: ${rwflowpack_pidfile="/var/run/rwflowpack.pid"}
+: ${rwflowpack_siteconfig="/rwf/rwfdata/silk.conf"}
+: ${rwflowpack_sensorconfig="/rwf/rwfdata/sensor.conf"}
+: ${rwflowpack_logfile="/var/log/${name}/${name}.log"}
+: ${rwflowpack_compression="best"}
+: ${rwflowpack_rootdir="/rwf/rwfdata"}
+: ${rwflowpack_user="rwf"}
+: ${rwflowpack_group="rwf"}
+
+start_precmd="rwflowpack_precmd"
+command="/usr/local/sbin/rwflowpack"
+command_args="--site-config-file=${rwflowpack_siteconfig} --sensor-configuration=${rwflowpack_sensorconfig} --log-pathname=${rwflowpack_logfile} --compression-method=${rwflowpack_compression} --pidfile=${rwflowpack_pidfile} --root-directory=${rwflowpack_rootdir}"
+
+rwflowpack_precmd()
+{
+	touch ${rwflowpack_pidfile}
+	chown ${rwflowpack_user}:${rwflowpack_group} ${rwflowpack_pidfile}
+	/usr/bin/install -d -o ${rwflowpack_user} -g ${rwflowpack_group} -m 750 /var/log/${name}
+}
+
+run_rc_command $*
