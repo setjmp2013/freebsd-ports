@@ -13,6 +13,6 @@ include/super_mediator/mediator_util.h
 %%MYSQL%%man/man1/super_table_creator.1.gz
 man/man1/super_mediator.1.gz
 man/man1/super_mediator.conf.1.gz
-share/licenses/super_mediator-1.1.1/catalog.mk
-share/licenses/super_mediator-1.1.1/LICENSE
-share/licenses/super_mediator-1.1.1/GPLv2
+share/licenses/super_mediator-1.1.2/catalog.mk
+share/licenses/super_mediator-1.1.2/LICENSE
+share/licenses/super_mediator-1.1.2/GPLv2
