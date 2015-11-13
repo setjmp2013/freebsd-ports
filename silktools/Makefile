@@ -23,6 +23,8 @@ USES=		gmake libtool perl5 pkgconfig
 USE_PERL5=	build
 INSTALL_TARGET=	install-strip
 
+USE_RC_SUBR=	rwflowpack
+
 OPTIONS_DEFINE=	LOCALTIME
 LOCALTIME_DESC=	Use localtime instead of UTC
 
