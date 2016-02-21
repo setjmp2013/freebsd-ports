@@ -2,7 +2,7 @@
 # $FreeBSD: head/net-mgmt/yaf/Makefile 372233 2014-11-06 19:42:23Z antoine $
 
 PORTNAME=	yaf
-PORTVERSION=	2.8.0
+PORTVERSION=	2.8.1
 CATEGORIES=	setjmp net-mgmt
 MASTER_SITES=	http://tools.netsa.cert.org/releases/
 
