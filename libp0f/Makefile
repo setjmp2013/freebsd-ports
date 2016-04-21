@@ -3,20 +3,21 @@
 
 PORTNAME=	libp0f
 PORTVERSION=	2.0.8
+PORTREVISION=	2
 CATEGORIES=	setjmp net
-MASTER_SITES=	http://tools.netsa.cert.org/confluence/download/attachments/16547842/
-DISTNAME=	p0flib
+MASTER_SITES=	http://tools.netsa.cert.org/releases/
+DISTNAME=	libp0f-2.0.8-2012032901
 
 MAINTAINER=	setjmp@hotmail.com
 COMMENT=	Library of p0f-2.x for yaf as in the CERT NETSA confluence
 
 LICENSE=	LGPL21
 
-WRKSRC_SUBDIR=	libp0f
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc
 INSTALL_TARGET=	install-strip
-USES=		libtool pathfix pkgconfig tar:tgz
+USES=		libtool pathfix pkgconfig tar:xz
+USE_LDCONFIG=	YES
 
 post-stage:
 	${RM} -f ${STAGEDIR}${LOCALBASE}/bin/p0f
