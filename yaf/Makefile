@@ -3,7 +3,7 @@
 
 PORTNAME=	yaf
 PORTVERSION=	2.8.4
-CATEGORIES=	setjmp net-mgmt
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://tools.netsa.cert.org/releases/
 
 MAINTAINER=	setjmp@hotmail.com
@@ -12,10 +12,10 @@ COMMENT=	YAF is Yet Another Flowmeter
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfixbuf.so:${PORTSDIR}/setjmp/libfixbuf \
-		libltdl.so:${PORTSDIR}/devel/libltdl \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libp0f.so:${PORTSDIR}/setjmp/libp0f
+LIB_DEPENDS=	libfixbuf.so:/usr/home/setjmp/ports/setjmp/libfixbuf \
+		libltdl.so:devel/libltdl \
+		libpcre.so:devel/pcre \
+		libp0f.so:/usr/home/setjmp/ports/setjmp/libp0fn
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
