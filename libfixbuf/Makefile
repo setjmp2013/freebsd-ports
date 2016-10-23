@@ -3,7 +3,7 @@
 
 PORTNAME=	libfixbuf
 PORTVERSION=	1.7.1
-CATEGORIES=	setjmp net
+CATEGORIES=	net
 MASTER_SITES=	http://tools.netsa.cert.org/releases/ \
 		http://redundancy.redundancy.org/mirror/
 
@@ -14,10 +14,9 @@ LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool pathfix pkgconfig
+USES=		libtool pathfix pkgconfig gettext ssl
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 
 OPTIONS_DEFINE=	SCTP OPENSSL SPREAD4
 
